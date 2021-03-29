@@ -1,8 +1,8 @@
 # Project
 
-Test SECRET VALUE
+Repository demonstrates the security vulnerabilities associated with enabled forked PR access to secrets inside CircleCI pipelines.
 
-## Repository contents
+![Forked PR settings](assets/forked-pr-settings-circleci.jpg)
 
 ## Public domain
 
