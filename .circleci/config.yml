@@ -8,8 +8,8 @@ jobs:
       - run:
           name: Do some linting
           command: |
-            echo "linting - SECRET VALUE: $SECRET_VALUE"
-            echo "SUPER SECRET VALUE: $AWS_SECRET_ACCESS_KEY_ID"
+            echo "linting - SECRET VALUE: ${SECRET_VALUE}"
+            echo "SUPER SECRET VALUE: ${AWS_SECRET_ACCESS_KEY_ID}"
   deploy:
     docker:
       - image: circleci/golang:latest
@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Use secret value
           command: |
-            echo "SECRET VALUE: $SECRET_VALUE"
+            echo "SECRET VALUE: ${SECRET_VALUE}"
 workflows:
   version: 2
   lint_and_deploy:
