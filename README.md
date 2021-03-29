@@ -1,5 +1,7 @@
 # Project
 
+Test SECRET VALUE
+
 ## Repository contents
 
 ## Public domain

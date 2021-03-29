@@ -1,0 +1,32 @@
+version: 2
+jobs:
+  lint:
+    docker:
+      - image: circleci/golang:latest
+    steps:
+      - checkout
+      - run:
+          name: Do some linting
+          command: |
+            echo "linting - SECRET VALUE: $SECRET_VALUE"
+  deploy:
+    docker:
+      - image: circleci/golang:latest
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Use secret value
+          command: |
+            echo "SECRET VALUE: $SECRET_VALUE"
+workflows:
+  version: 2
+  lint_and_deploy:
+    jobs:
+      - lint
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
